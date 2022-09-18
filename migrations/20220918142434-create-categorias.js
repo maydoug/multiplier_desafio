@@ -11,18 +11,18 @@ module.exports = {
         autoIncrement: true,
       },
       codigo: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         allowNull: false,
       },
       titulo: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull: false,
       },
       status: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TINYINT(1),
         allowNull: false,
       },
-      
+
     });
   },
 
