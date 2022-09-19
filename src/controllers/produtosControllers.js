@@ -43,6 +43,22 @@ module.exports = {
             return res.status(400).json({ error: error.message });
         }
     },
+    
+    async updateProduto(req, res) {
+        try {
+            const { idCategoria, codigo, nome, descricao, valor, status } = req.body;
 
+            await produtos.update(
+                { idCategoria, codigo, nome, descricao, valor, status },
+                {
+                    where: { id: req.params.id },
+                }
+            );
+
+            return res.status(200).json({ message: 'Produto atualizado com sucesso' });
+        } catch (error) {
+            return res.status(400).json({ error: error.message });
+        }
+    },
 
 };
