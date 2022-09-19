@@ -12,6 +12,15 @@ module.exports = {
             return res.status(400).json({ error: error.message});
         }
     },
+        async getAll(req, res) {
+    
+            try {
+                const cat = await categorias.findAll();            
+                return res.status(200).json(cat);
+            } catch (error) {
+                return res.status(400).json({ error: error.message});
+            }
+        },
 
 };
 
