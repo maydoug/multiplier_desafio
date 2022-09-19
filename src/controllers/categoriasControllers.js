@@ -5,8 +5,7 @@ module.exports = {
 
         try {
             const { codigo, titulo, status } = req.body;
-            const categoria = await categorias.create({ codigo, titulo, status })
-            console.log(categoria)            
+            const categoria = await categorias.create({ codigo, titulo, status })           
             return res.status(200).json({ message: 'Cadastrado com sucesso!', categoria });
         } catch (error) {
             return res.status(400).json({ error: error.message});
@@ -16,6 +15,14 @@ module.exports = {
     
             try {
                 const cat = await categorias.findAll();            
+                return res.status(200).json(cat);
+            } catch (error) {
+                return res.status(400).json({ error: error.message});
+            }
+        },
+        async getById(req, res) {
+            try {
+                const cat = await categorias.findByPk(req.params.id);
                 return res.status(200).json(cat);
             } catch (error) {
                 return res.status(400).json({ error: error.message});
