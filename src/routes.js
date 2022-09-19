@@ -12,5 +12,6 @@ router.put('/categorias/:id', categoriasControllers.updateCategoria);
 
 // ** Rotas Produtos ** //
 router.post('/produtos', produtosControllers.add);
+router.get('/produtos', produtosControllers.getAll);
 
 module.exports= router;

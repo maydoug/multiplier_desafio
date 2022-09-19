@@ -12,5 +12,15 @@ module.exports = {
         }
     },
 
+    async getAll(req, res) {
+
+        try {
+            const prod = await produtos.findAll();
+            return res.status(200).json(prod);
+        } catch (error) {
+            return res.status(400).json({ error: error.message });
+        }
+    },
+
 
 };
