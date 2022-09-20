@@ -31,7 +31,7 @@ module.exports = {
         allowNull: false,
       },
       valor: {
-        type: Sequelize.DECIMAL(11, 10),
+        type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
       status: {

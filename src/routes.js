@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const categoriasControllers = require('./controllers/categoriasControllers');
 const produtosControllers = require('./controllers/produtosControllers');
+const estoqueControllers = require('./controllers/estoqueControllers');
 
 
 // ** Rotas Categorias ** //
@@ -16,5 +17,8 @@ router.get('/produtos', produtosControllers.getAll);
 router.get('/produtos/:id', produtosControllers.getById);
 router.delete('/produtos/:id', produtosControllers.delProduto);
 router.put('/produtos/:id', produtosControllers.updateProduto);
+
+// ** Rotas Estoque ** //
+router.get('/produtos/:id/estoque', estoqueControllers.getById);
 
 module.exports= router;
