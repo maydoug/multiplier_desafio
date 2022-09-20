@@ -9,17 +9,18 @@ router.post('/categorias', categoriasControllers.add);
 router.get('/categorias', categoriasControllers.getAll);
 router.get('/categorias/:id', categoriasControllers.getById);
 router.delete('/categorias/:id', categoriasControllers.delCategoria);
-router.put('/categorias/:id', categoriasControllers.updateCategoria);
+router.patch('/categorias/:id', categoriasControllers.updateCategoria);
 
 // ** Rotas Produtos ** //
 router.post('/produtos', produtosControllers.add);
 router.get('/produtos', produtosControllers.getAll);
 router.get('/produtos/:id', produtosControllers.getById);
 router.delete('/produtos/:id', produtosControllers.delProduto);
-router.put('/produtos/:id', produtosControllers.updateProduto);
+router.patch('/produtos/:id', produtosControllers.updateProduto);
 
 // ** Rotas Estoque ** //
 router.get('/produtos/:id/estoque', estoqueControllers.getById);
 router.patch('/produtos/:id/estoque', estoqueControllers.updateEstoque);
+router.delete('/produtos/:id/estoque', estoqueControllers.delEstoque);
 
 module.exports= router;
