@@ -11,4 +11,14 @@ async getById(req, res) {
     }
 },
 
+async updateEstoque(req,res){
+    try {
+        const est = await estoque.findByPk(req.params.id);
+        await est.update(req.body);
+        return res.status(200).json(est)
+    } catch (error) {
+        return res.status(400).json({ error: error.message});
+    }
+},
+
 };

@@ -20,5 +20,6 @@ router.put('/produtos/:id', produtosControllers.updateProduto);
 
 // ** Rotas Estoque ** //
 router.get('/produtos/:id/estoque', estoqueControllers.getById);
+router.patch('/produtos/:id/estoque', estoqueControllers.updateEstoque);
 
 module.exports= router;
